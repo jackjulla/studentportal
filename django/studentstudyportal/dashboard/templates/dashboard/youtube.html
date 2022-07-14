@@ -1,0 +1,40 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+<section class="text-center container">
+  <h2>Search Videos in Youtube</h2>
+  <p>search videos and select any video to open in youtube</p>
+  <form action="" method="post">
+    {% csrf_token %} {{form}}
+    <input class="btn btn-danger" type="submit" value="Submit" />
+  </form>
+  <br />
+  {% for result in results %}
+  <a href="{{result.link}}" target="_blank">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-5">
+            <img class="img-fluid" src="{{{result.thumbnail}}" alt="" />
+          </div>
+          <div class="col-md-7">
+            <h3 class="p-0 m-0">{{result.title}}</h3>
+            <b>
+              <u>
+                <h5 class="p-0 m-0">{{result.channel}}</h5>
+              </u>
+            </b>
+            <h6 class="p-0 m-1">{{result.description}}</h6>
+            <b>
+              <h6 class="ml-0 mt-3">{{result.duration}}</h6>
+              <h6 class="ml-0 mt-1">{{result.views}}</h6>
+              <h6 class="ml-0 mt-1">{{result.published}}</h6>
+            </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+  <br />
+</section>
+
+{% endblock content %}

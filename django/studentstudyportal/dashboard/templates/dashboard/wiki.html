@@ -1,0 +1,30 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+
+<section class="text-center container">
+  <h2>Search articles in wikipedia</h2>
+  <p>just enter the search query to obtain the results</p>
+  <b>Enter without any space</b>
+  <form action="" method="post">
+    {% csrf_token %} {{form}}
+    <input class="btn btn-danger" type="submit" value="Submit" />
+  </form>
+  <br />
+
+  <div class="container">
+    <div class="content-section p-0 mt-5">
+      <a href="" class="p-0 m-0" target="_blank">
+        <div class="custom-header">
+          <h2>{{titl}}e</h2>
+          {{title}}
+          <h6>{{link}}</h6>
+        </div>
+      </a>
+
+      <hr class="p-0 m-0" />
+      <p class="description m-5 p-5">{{details}}</p>
+      <hr />
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
