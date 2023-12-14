@@ -1,1 +1,1 @@
-Built a mobile application using dart and flutter where users can search for various delicacies
+I built a portal using the django framework where the students and teachers can interact by sharing educational material.
